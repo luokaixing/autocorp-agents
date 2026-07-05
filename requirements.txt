@@ -1,0 +1,9 @@
+openai>=1.0.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+click>=8.0.0
+schedule>=1.2.0
+eth-account>=0.10.0
+# engine/social_reach.py 抓取社交平台公开内容（reddit .json / bilibili API / youtube HTML）
+httpx>=0.24.0
+# engine/tools/web_searcher.py 已使用 duckduckgo-search，social_reach 翻墙失败时降级到 web_searcher

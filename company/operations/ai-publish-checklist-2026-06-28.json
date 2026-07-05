@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-06-28T14:30:47.925510",
+  "strategy": "AI 公司分析了现有资源，制定以下赚钱策略",
+  "priority_tasks": [
+    {
+      "priority": "P1",
+      "task": "发布 Figure Heloc 教程到 Paragraph",
+      "file": "company/projects/autoCorp-daily/articles/11-figure-heloc-rwa-guide.md",
+      "expected_revenue": "$3.0",
+      "reason": "Figure Heloc 24h 涨幅 1.52%，RWA 赛道热度高，蹭热度写教程"
+    },
+    {
+      "priority": "P2",
+      "task": "发布 Twitter 引流推文",
+      "file": "company/marketing/twitter-tweets-2026-06-28-figure-heloc.md",
+      "expected_revenue": "$1.0",
+      "reason": "为已发布文章引流，增加打赏曝光"
+    },
+    {
+      "priority": "P2",
+      "task": "发布 Reddit 引流帖子",
+      "file": "company/marketing/reddit-post-2026-06-28-figure-heloc.md",
+      "expected_revenue": "$0.5",
+      "reason": "Reddit 加密社区流量大"
+    }
+  ],
+  "ai_analysis": {
+    "market_opportunity": "Figure Heloc 是 Top 10 中唯一上涨的币，RWA 赛道是 2026 年热门叙事",
+    "content_advantage": "公司已有 13+ 篇加密教程，内容生产能力成熟",
+    "monetization_path": "Paragraph 打赏 + Twitter/Reddit 引流 = 内容变现闭环",
+    "risk": "Chrome 调试端口无法开启（exit_type=Crashed），无法自动发布"
+  }
+}

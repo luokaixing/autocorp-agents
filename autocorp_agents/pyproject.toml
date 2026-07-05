@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autocorp-agents"
+version = "0.1.0"
+description = "A multi-role autonomous AI agent framework, refined through production use"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "AutoCorp Research Desk", email = "research@autocorp.ai"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.24.0",
+    "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+paypal = [
+    "paypalrestsdk>=2.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/autocorp/autocorp-agents"
+Documentation = "https://github.com/autocorp/autocorp-agents#readme"
+Repository = "https://github.com/autocorp/autocorp-agents"
+"Bug Tracker" = "https://github.com/autocorp/autocorp-agents/issues"
+"GitHub Sponsors" = "https://github.com/sponsors/autocorp"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["autocorp_agents*", "engine*"]

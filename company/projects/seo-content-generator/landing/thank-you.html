@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful — SEO Content Generator</title>
+  <meta name="description" content="Your payment was successful. Generate your SEO article now." />
+  <meta name="theme-color" content="#6366f1" />
+  <style>
+    :root {
+      --color-primary: #6366f1;
+      --color-primary-dark: #4f46e5;
+      --color-secondary: #10b981;
+      --color-secondary-dark: #059669;
+      --color-bg: #f9fafb;
+      --color-surface: #ffffff;
+      --color-text: #111827;
+      --color-text-muted: #6b7280;
+      --color-border: #e5e7eb;
+      --color-danger: #ef4444;
+      --gradient-hero: linear-gradient(135deg, #4f46e5 0%, #6366f1 45%, #8b5cf6 100%);
+      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-pill: 999px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --gutter: 24px;
+      --transition: 0.2s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { margin: 0 0 0.5em; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
+    p { margin: 0 0 1em; }
+    a { color: var(--color-primary-dark); }
+
+    .container { width: 100%; max-width: 920px; margin: 0 auto; padding: 0 var(--gutter); }
+
+    .success-banner {
+      position: relative;
+      background: var(--gradient-hero);
+      color: #fff;
+      padding: 64px 0 56px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .success-banner::after {
+      content: "";
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      top: -200px; right: -120px;
+      pointer-events: none;
+    }
+    .success-banner .check {
+      width: 72px; height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--color-secondary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 38px;
+      box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.25);
+      position: relative; z-index: 1;
+    }
+    .success-banner h1 { font-size: clamp(28px, 5vw, 40px); position: relative; z-index: 1; }
+    .success-banner p { color: rgba(255, 255, 255, 0.9); margin-bottom: 0; position: relative; z-index: 1; }
+    .order-id { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; opacity: 0.85; margin-top: 10px !important; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: inherit; font-size: 16px; font-weight: 600;
+      padding: 14px 28px; border-radius: var(--radius-pill);
+      border: 2px solid transparent; cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      text-decoration: none; white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-green { background: var(--color-secondary); color: #fff; box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.45); }
+    .btn-green:hover { background: var(--color-secondary-dark); }
+    .btn-primary { background: var(--color-primary); color: #fff; box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.5); }
+    .btn-primary:hover { background: var(--color-primary-dark); }
+    .btn-block { width: 100%; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    main { padding: 56px 0 80px; }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 28px;
+    }
+    .card h2 { font-size: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .form-control {
+      width: 100%; font-family: inherit; font-size: 16px;
+      padding: 12px 14px; border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm); background: var(--color-surface);
+      color: var(--color-text); transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .form-control:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
+    select.form-control { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+
+    .result-empty { text-align: center; color: var(--color-text-muted); padding: 40px 0; }
+    .result-empty .big-icon { font-size: 44px; opacity: 0.6; margin-bottom: 8px; }
+
+    .article-preview { font-size: 15px; }
+    .article-preview .meta-row {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+      margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border);
+    }
+    .score-pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; padding: 6px 12px; border-radius: var(--radius-pill); font-size: 14px; }
+    .score-pill.high { background: rgba(16, 185, 129, 0.12); color: var(--color-secondary-dark); }
+    .score-pill.mid { background: rgba(245, 158, 11, 0.12); color: #b45309; }
+    .score-pill.low { background: rgba(239, 68, 68, 0.12); color: var(--color-danger); }
+    .article-preview h1 { font-size: 24px; margin: 4px 0 12px; }
+    .article-preview h2 { font-size: 18px; margin: 20px 0 8px; }
+    .article-preview h3 { font-size: 15px; margin: 14px 0 6px; color: var(--color-text-muted); }
+    .article-preview p { margin: 0 0 12px; }
+    .article-preview .word-count { font-size: 13px; color: var(--color-text-muted); }
+    .article-actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .spinner { width: 22px; height: 22px; border: 3px solid rgba(99,102,241,0.2); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .alert { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 14px; margin-bottom: 16px; }
+    .alert-error { background: rgba(239, 68, 68, 0.1); color: var(--color-danger); border: 1px solid rgba(239, 68, 68, 0.25); }
+    .alert-info { background: rgba(99, 102, 241, 0.08); color: var(--color-primary-dark); border: 1px solid rgba(99, 102, 241, 0.2); }
+
+    footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 28px 0; text-align: center; font-size: 14px; }
+    footer .footer-brand { color: #fff; font-weight: 700; }
+
+    @media (max-width: 560px) {
+      :root { --gutter: 18px; }
+      .card { padding: 24px 20px; }
+      .article-actions .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+
+  <header class="success-banner">
+    <div class="container">
+      <div class="check" aria-hidden="true">✓</div>
+      <h1>Payment Successful! 🎉</h1>
+      <p>Thank you for your purchase. You can now generate your SEO article.</p>
+      <p class="order-id" id="order-id-display"></p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="card">
+        <h2>Generate My Article</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 24px;">Enter your target keyword and language, then generate your full SEO-optimized article with score report and Markdown download.</p>
+
+        <div id="order-alert"></div>
+
+        <form id="article-form" novalidate>
+          <div class="form-group">
+            <label for="article-keyword">Keyword</label>
+            <input type="text" id="article-keyword" name="keyword" class="form-control" placeholder="e.g., email marketing" required autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="article-lang">Language</label>
+            <select id="article-lang" name="lang" class="form-control">
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-green btn-block" id="article-submit">Generate My Article</button>
+        </form>
+      </section>
+
+      <section class="card" id="article-result" aria-live="polite">
+        <div class="result-empty">
+          <div class="big-icon" aria-hidden="true">📄</div>
+          <div style="font-weight:600;color:var(--color-text);">Your article will appear here</div>
+          <div style="font-size:14px;">Submit the form above to generate.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">SEO Content Generator</span> · by AutoCorp<br />
+      © 2026 AutoCorp. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

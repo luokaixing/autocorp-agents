@@ -1,0 +1,1956 @@
+{
+  "fetch_time_utc": "2026-06-29T16:25:10.925979+00:00",
+  "coingecko_available": true,
+  "top_lending_protocols": [
+    {
+      "id": "1599",
+      "name": "Aave V3",
+      "address": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+      "symbol": "AAVE",
+      "url": "https://aave.com",
+      "description": "Earn interest, borrow assets, and build applications",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/aave-v3",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "Plasma",
+        "Arbitrum",
+        "Base",
+        "Avalanche",
+        "Binance",
+        "Polygon",
+        "Mantle",
+        "MegaETH",
+        "X Layer",
+        "xDai",
+        "Optimism",
+        "Linea",
+        "Sonic",
+        "Celo",
+        "Scroll",
+        "zkSync Era",
+        "Metis",
+        "Soneium",
+        "Fantom",
+        "Harmony"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "Chainlink",
+          "type": "Primary",
+          "proof": []
+        }
+      ],
+      "module": "aave-v3/index.js",
+      "twitter": "aave",
+      "audit_links": [
+        "https://aave.com/security"
+      ],
+      "listedAt": 1648776877,
+      "parentProtocol": "parent#aave",
+      "wrongLiquidity": true,
+      "dimensions": {
+        "fees": {
+          "genuineSpikes": [
+            [
+              "2024-08-05",
+              "-"
+            ],
+            [
+              "2025-02-03",
+              "-"
+            ],
+            [
+              "2026-05-06",
+              "Kelp DAO exploiter's positions liquidated"
+            ]
+          ],
+          "adapter": "aave-v3"
+        }
+      },
+      "methodology": "Counts the tokens locked in the contracts to be used as collateral to borrow or to earn yield. Borrowed coins are not counted towards the TVL, so only the coins actually locked in the contracts are counted. There's multiple reasons behind this but one of the main ones is to avoid inflating the TVL through cycled lending.",
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/aave-v3/index.js",
+      "hallmarks": [
+        [
+          1650412800,
+          "Start AVAX Rewards"
+        ],
+        [
+          1659571200,
+          "Start OP Rewards"
+        ],
+        [
+          1776470400,
+          "KelpDAO hack"
+        ]
+      ],
+      "slug": "aave-v3",
+      "tvl": 11767366530.117754,
+      "chainTvls": {
+        "Base-borrowed": 275546474.3798379,
+        "Scroll-borrowed": 409699.9964396928,
+        "Base": 363789595.593311,
+        "Fantom-borrowed": 818.0494253324309,
+        "Binance-borrowed": 66365184.93454918,
+        "Sonic": 5671904.322147799,
+        "Linea-borrowed": 7582076.76597525,
+        "Avalanche-borrowed": 169117997.27920565,
+        "Optimism-borrowed": 27036272.177031636,
+        "Sonic-borrowed": 3198813.9986205464,
+        "Fantom": 3312.679310404849,
+        "Arbitrum": 377325746.5350539,
+        "Harmony-borrowed": 224369.2484017104,
+        "xDai-borrowed": 20402887.677037302,
+        "Polygon": 105217921.20882842,
+        "Soneium-borrowed": 37339.97865243469,
+        "Soneium": 124254.93372124617,
+        "Celo-borrowed": 1644596.7420486403,
+        "Scroll": 1534785.3765866214,
+        "Avalanche": 254170307.16704878,
+        "Mantle-borrowed": 243032212.46075392,
+        "X Layer-borrowed": 10548180.786153324,
+        "Celo": 4698266.789843896,
+        "Ethereum": 9519898223.57512,
+        "Ethereum-borrowed": 7249443556.132994,
+        "Linea": 10089935.312960047,
+        "Metis": 271143.40505784797,
+        "Optimism": 38480229.00897068,
+        "xDai": 48692954.36089903,
+        "Plasma-borrowed": 871873583.1300495,
+        "X Layer": 64454887.07464535,
+        "MegaETH-borrowed": 386929723.70579946,
+        "Binance": 141595361.371483,
+        "Arbitrum-borrowed": 291295768.2489312,
+        "Harmony": 0,
+        "zkSync Era": 733283.8361837267,
+        "Mantle": 94532232.75273663,
+        "Metis-borrowed": 34574.71912713076,
+        "Plasma": 654340364.6496503,
+        "MegaETH": 81741820.16419461,
+        "zkSync Era-borrowed": 228323.20993681,
+        "Polygon-borrowed": 50801500.87595427,
+        "borrowed": 9675753954.496923
+      },
+      "change_1h": -0.6625467099798215,
+      "change_1d": -1.1655316936949163,
+      "change_7d": -7.446523443039169,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "aave"
+    },
+    {
+      "id": "4025",
+      "name": "Morpho Blue",
+      "previousNames": [
+        "Morpho V1"
+      ],
+      "address": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+      "symbol": "MORPHO",
+      "url": "https://app.morpho.org",
+      "description": "Morpho Blue is a trustless and efficient lending primitive with permissionless market creation",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/morpho-blue",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "Base",
+        "Hyperliquid L1",
+        "Monad",
+        "Katana",
+        "Flare",
+        "World Chain",
+        "Arbitrum",
+        "Stable",
+        "Sei",
+        "Tempo",
+        "Plume Mainnet",
+        "Optimism",
+        "Citrea",
+        "Etherlink",
+        "Polygon",
+        "Hemi",
+        "Unichain",
+        "Celo",
+        "TAC",
+        "Klaytn",
+        "Abstract",
+        "Lisk",
+        "Soneium",
+        "Scroll",
+        "Fraxtal",
+        "Corn",
+        "Sonic",
+        "Binance",
+        "0G",
+        "Botanix",
+        "Ink",
+        "xDai",
+        "Zircuit",
+        "Bitlayer",
+        "Linea",
+        "Mode"
+      ],
+      "module": "morpho-blue/index.js",
+      "twitter": "Morpho",
+      "audit_links": [
+        "https://docs.morpho.org/morpho-blue/concepts/security/audits/"
+      ],
+      "parentProtocol": "parent#morpho",
+      "listedAt": 1705261273,
+      "dimensions": {
+        "fees": "morpho"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/morpho-blue/index.js",
+      "slug": "morpho-blue",
+      "tvl": 6539846962.692918,
+      "chainTvls": {
+        "xDai": 0,
+        "Zircuit-borrowed": 0,
+        "xDai-borrowed": 0,
+        "Zircuit": 0,
+        "Bitlayer-borrowed": 0,
+        "Sei-borrowed": 15270587.84027333,
+        "Linea": 0,
+        "Flare": 46419828.85475517,
+        "Bitlayer": 0,
+        "Ink-borrowed": 0.8998327922994741,
+        "Linea-borrowed": 0,
+        "0G-borrowed": 4.454211403354308,
+        "Mode-borrowed": 0,
+        "Mode": 0,
+        "Optimism-borrowed": 3131795.1471572905,
+        "Hemi-borrowed": 8.540217326878269,
+        "Sonic": 83.80696542984879,
+        "Scroll-borrowed": 1.0917590540473494,
+        "Binance-borrowed": 4.001837752559421,
+        "Fraxtal-borrowed": 210.5572953355004,
+        "Klaytn-borrowed": 19160.957630332614,
+        "Citrea-borrowed": 1532108.4664346436,
+        "Ink": 13.266670962246517,
+        "Tempo-borrowed": 1722.782890471568,
+        "Stable-borrowed": 18098951.648995847,
+        "Tempo": 7688921.181438769,
+        "Lisk-borrowed": 7378.274650898538,
+        "Sonic-borrowed": 12.499931154218856,
+        "Soneium-borrowed": 20.271407508989313,
+        "Flare-borrowed": 21897189.598929822,
+        "Celo-borrowed": 21986.858964667554,
+        "World Chain-borrowed": 6338501.72258605,
+        "Hemi": 1745486.0237754332,
+        "Botanix-borrowed": 0,
+        "Scroll": 6601.16239382156,
+        "Unichain-borrowed": 1000548.5303670297,
+        "Citrea": 3828430.9443415958,
+        "Fraxtal": 249.8685245653506,
+        "Lisk": 104517.9559498168,
+        "Soneium": 24571.592984084615,
+        "Optimism": 4993874.9527219925,
+        "Stable": 26755140.88645915,
+        "Klaytn": 544730.098810091,
+        "Celo": 830604.6406564935,
+        "Binance": 81.13793683545518,
+        "Botanix": 14.337255392879152,
+        "Plume Mainnet-borrowed": 4860010.563686181,
+        "Etherlink-borrowed": 1932451.769557476,
+        "Corn-borrowed": 0,
+        "World Chain": 29045157.700519007,
+        "Abstract-borrowed": 37425.30682919614,
+        "Etherlink": 3551732.680133432,
+        "0G": 37.12759151298003,
+        "Corn": 128.20169891415756,
+        "Abstract": 334284.11301084433,
+        "Unichain": 1429075.5007513063,
+        "Sei": 25157669.205246802,
+        "Katana-borrowed": 34307253.55917028,
+        "TAC-borrowed": 311865.9127985148,
+        "Arbitrum-borrowed": 16770222.810512587,
+        "TAC": 785011.4761202941,
+        "Katana": 72362106.78198507,
+        "Hyperliquid L1-borrowed": 97552299.01536003,
+        "Hyperliquid L1": 286905455.471661,
+        "Plume Mainnet": 7398574.717629621,
+        "Monad-borrowed": 56609208.23742874,
+        "Monad": 91252333.86212416,
+        "Polygon-borrowed": 1282078.8981789567,
+        "Polygon": 3196585.770152295,
+        "Arbitrum": 28366853.59804075,
+        "Ethereum-borrowed": 1827939792.049248,
+        "Ethereum": 3259869143.6468472,
+        "Base-borrowed": 1519906750.7749693,
+        "Base": 2678767921.5261493,
+        "borrowed": 3594856692.2928524
+      },
+      "change_1h": -0.7713447701706997,
+      "change_1d": -0.5752199934525493,
+      "change_7d": -5.797893864826392,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "morpho"
+    },
+    {
+      "id": "2929",
+      "name": "SparkLend",
+      "address": "0xc20059e0317de91738d13af027dfc4a50781b066",
+      "symbol": "SPK",
+      "url": "https://app.spark.fi",
+      "referralUrl": "https://app.spark.fi/points/KNQ5HD",
+      "description": "SparkLend is a stablecoin lending market. Unlike other lending protocols where rates fluctuate based on utilization or loan size, SparkLend offers governance-defined rates that do not vary based on those factors. This is made possible by Spark’s Liquidity Layer (SLL), which supplies consistent stablecoin liquidity to the protocol",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/sparklend",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "xDai"
+      ],
+      "module": "spark-fi/index.js",
+      "twitter": "sparkdotfi",
+      "forkedFromIds": [
+        "1599"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "Chainlink",
+          "type": "Aggregator",
+          "proof": [
+            "https://vote.makerdao.com/executive/template-executive-vote-rate-adjustments-sweep-pauseproxy-dai-integration-boost-funding-whistleblower-payments-spark-proxy-spell-february-6-2025",
+            "https://github.com/DefiLlama/defillama-server/pull/9240"
+          ],
+          "startDate": "2025-02-10"
+        },
+        {
+          "name": "Chronicle",
+          "type": "Aggregator",
+          "proof": [
+            "https://vote.makerdao.com/executive/template-executive-vote-rate-adjustments-sweep-pauseproxy-dai-integration-boost-funding-whistleblower-payments-spark-proxy-spell-february-6-2025",
+            "https://github.com/DefiLlama/defillama-server/pull/9240"
+          ],
+          "startDate": "2025-02-10"
+        },
+        {
+          "name": "RedStone",
+          "type": "Aggregator",
+          "proof": [
+            "https://vote.makerdao.com/executive/template-executive-vote-rate-adjustments-sweep-pauseproxy-dai-integration-boost-funding-whistleblower-payments-spark-proxy-spell-february-6-2025",
+            "https://github.com/DefiLlama/defillama-server/pull/9240"
+          ],
+          "startDate": "2025-02-10"
+        }
+      ],
+      "audit_links": [
+        "https://devs.spark.fi/security/security-and-audits"
+      ],
+      "parentProtocol": "parent#spark",
+      "listedAt": 1683144119,
+      "dimensions": {
+        "fees": "spark"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/registries/aave.js",
+      "slug": "sparklend",
+      "tvl": 3387546579.6676927,
+      "chainTvls": {
+        "Ethereum-staking": 10524069.393209781,
+        "Ethereum": 3387199993.870986,
+        "Ethereum-borrowed": 1682076219.8624268,
+        "xDai-borrowed": 118951.37457452485,
+        "xDai": 346585.79670671915,
+        "staking": 10524069.393209781,
+        "borrowed": 1682195171.2370012
+      },
+      "change_1h": -0.6331605659533608,
+      "change_1d": -1.2813840927447444,
+      "change_7d": -3.9910039148326177,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "spark",
+      "staking": 10524069.393209781
+    },
+    {
+      "id": "494",
+      "name": "JustLend V1",
+      "address": "tron:TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9",
+      "symbol": "JST",
+      "url": "https://justlend.org/",
+      "description": "JustLend is a TRON-powered coin market protocol aimed at establishing fund pools whose interest rates are determined by an algorithm based on the supply and demand of TRON assets.",
+      "chain": "Tron",
+      "logo": "https://icons.llamao.fi/icons/protocols/justlend-v1",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Tron"
+      ],
+      "module": "justlend.js",
+      "twitter": "DeFi_JUST",
+      "oraclesBreakdown": [
+        {
+          "name": "WINkLink",
+          "type": "Primary",
+          "proof": [
+            "https://docs.justlend.org/developers/supply-and-borrow-market/price-oracle"
+          ],
+          "startDate": "2021-11-04",
+          "endDate": "2025-05-15"
+        },
+        {
+          "name": "Internal",
+          "type": "Primary",
+          "proof": [
+            "https://docs.justlend.org/developers/supply-and-borrow-market/price-oracle",
+            "https://tronscan.org/#/address/TBPtNVdgkB8QPRHAJeZok6D9pqsFdALv9w"
+          ],
+          "startDate": "2025-05-15"
+        }
+      ],
+      "audit_links": [
+        "https://justlend.org/docs/justlend_audit_en.pdf"
+      ],
+      "parentProtocol": "parent#justlend",
+      "dimensions": {
+        "fees": "justlend"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/justlend.js",
+      "hallmarks": [
+        [
+          1733270400,
+          "TRX token price was increasing over 90%"
+        ]
+      ],
+      "slug": "justlend-v1",
+      "tvl": 2937422107.200535,
+      "chainTvls": {
+        "Tron-borrowed": 127214469.49725491,
+        "Tron": 2937422107.200535,
+        "borrowed": 127214469.49725491
+      },
+      "change_1h": 0.0835063429535694,
+      "change_1d": -0.3705830255838549,
+      "change_7d": -6.56182307353879,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "justlend"
+    },
+    {
+      "id": "587",
+      "name": "Maple",
+      "address": "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+      "symbol": "SYRUP",
+      "url": "https://www.maple.finance",
+      "description": "Maple Finance is an institutional capital marketplace powered by blockchain technology.",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/maple",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "Solana"
+      ],
+      "module": "maple/index.js",
+      "twitter": "maplefinance",
+      "oraclesBreakdown": [
+        {
+          "name": "Chainlink",
+          "type": "Primary",
+          "proof": []
+        }
+      ],
+      "parentProtocol": "parent#maple-finance",
+      "audit_links": [
+        "https://github.com/maple-labs/maple-core#audit-reports"
+      ],
+      "dimensions": {
+        "fees": "maple-finance"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/maple/index.js",
+      "hallmarks": [
+        [
+          1670976000,
+          "V2 Deployment"
+        ]
+      ],
+      "slug": "maple",
+      "tvl": 2416481621.8936405,
+      "chainTvls": {
+        "Solana": 0,
+        "Ethereum-staking": 28920176.764226366,
+        "Ethereum-borrowed": 1939732505.3640704,
+        "Ethereum": 2416481621.8936405,
+        "staking": 28920176.764226366,
+        "borrowed": 1939732505.3640704
+      },
+      "change_1h": -0.023365562156570263,
+      "change_1d": 2.0144384994117672,
+      "change_7d": 16.04813833207379,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "maple-finance",
+      "staking": 28920176.764226366
+    },
+    {
+      "id": "3770",
+      "name": "Kamino Lend",
+      "address": "solana:KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS",
+      "symbol": "KMNO",
+      "url": "https://kamino.com/",
+      "description": "Kamino Lend (K-Lend) is a novel peer-to-pool borrowing primitive designed as foundational infrastructure to power complex financial products with leverage and automation and as a decentralized matchmaker between borrowers and lenders",
+      "chain": "Solana",
+      "logo": "https://icons.llamao.fi/icons/protocols/kamino-lend",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Solana"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "Pyth",
+          "type": "Aggregator",
+          "proof": [
+            "https://docs.kamino.finance/risk/oracles"
+          ]
+        },
+        {
+          "name": "Switchboard",
+          "type": "Aggregator",
+          "proof": [
+            "https://github.com/DefiLlama/defillama-server/pull/9552"
+          ]
+        },
+        {
+          "name": "Chainlink",
+          "type": "Aggregator",
+          "proof": [
+            "https://gov.kamino.finance/t/kamino-integrates-chainlink-data-streams-for-high-quality-low-latency-market-data/550"
+          ],
+          "startDate": "2025-04-29"
+        }
+      ],
+      "module": "kamino-lending/index.js",
+      "twitter": "Kamino",
+      "audit_links": [
+        "https://kamino.com/security#security-audits"
+      ],
+      "listedAt": 1699615528,
+      "parentProtocol": "parent#kamino-finance",
+      "dimensions": {
+        "fees": "kamino-lending"
+      },
+      "methodology": "TVL consists of deposits made to the protocol, and borrowed tokens are counted.",
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/kamino-lending/index.js",
+      "slug": "kamino-lend",
+      "tvl": 1079247686.321437,
+      "chainTvls": {
+        "Solana-borrowed": 944032747.7174056,
+        "Solana": 1079247686.321437,
+        "borrowed": 944032747.7174056
+      },
+      "change_1h": -0.19909125943382833,
+      "change_1d": 0.6343923051639564,
+      "change_7d": -3.1845076860487183,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "kamino"
+    },
+    {
+      "id": "2088",
+      "name": "Compound V3",
+      "address": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+      "symbol": "COMP",
+      "url": "https://v3-app.compound.finance/",
+      "description": "Compound is an algorithmic, autonomous interest rate protocol built for developers, to unlock a universe of open financial applications.",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/compound-v3",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Ethereum",
+        "Arbitrum",
+        "Base",
+        "Optimism",
+        "Polygon",
+        "Mantle",
+        "Unichain",
+        "Ronin",
+        "Scroll"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "Chainlink",
+          "type": "Primary",
+          "proof": []
+        },
+        {
+          "name": "RedStone",
+          "type": "Primary",
+          "proof": [
+            "https://github.com/DefiLlama/defillama-server/pull/9930"
+          ],
+          "chains": [
+            {
+              "chain": "Unichain"
+            }
+          ]
+        },
+        {
+          "name": "Api3",
+          "type": "Primary",
+          "proof": [
+            "https://github.com/compound-finance/comet/pull/939"
+          ],
+          "chains": [
+            {
+              "chain": "Mantle"
+            }
+          ]
+        }
+      ],
+      "module": "compound-v3/index.js",
+      "twitter": "Compound_xyz",
+      "audit_links": [
+        "https://compound.finance/docs/security"
+      ],
+      "parentProtocol": "parent#compound-finance",
+      "listedAt": 1663169029,
+      "dimensions": {
+        "fees": "compound-v3"
+      },
+      "methodology": "Counts the tokens locked in the contracts to be used as collateral to borrow or to earn yield. Borrowed coins are not counted towards the TVL, so only the coins actually locked in the contracts are counted. There's multiple reasons behind this but one of the main ones is to avoid inflating the TVL through cycled lending.. TVL is calculated by getting the market addresses from comptroller and calling the totalsCollaterals() on-chain method to get the amount of tokens locked in each of these addresses, then we get the price of each token from coingecko.",
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/compound-v3/index.js",
+      "slug": "compound-v3",
+      "tvl": 1030046934.2610978,
+      "chainTvls": {
+        "Polygon-borrowed": 2342059.9418011233,
+        "Unichain-borrowed": 516834.990560997,
+        "Base-borrowed": 10386297.487726698,
+        "Arbitrum-borrowed": 23112949.03468066,
+        "Optimism-borrowed": 4943454.14580775,
+        "Scroll-borrowed": 16800.963796525837,
+        "Ethereum-borrowed": 502828274.1797947,
+        "Ronin-borrowed": 12708.007493721383,
+        "Mantle-borrowed": 571234.2082407642,
+        "Base": 18402609.6602873,
+        "Ronin": 97334.81279214988,
+        "Unichain": 916000.7951939658,
+        "Ethereum": 934305171.7691504,
+        "Scroll": 93207.23342552215,
+        "Polygon": 5497786.1042141635,
+        "Arbitrum": 59314903.72522421,
+        "Mantle": 1629291.3968435614,
+        "Optimism": 9790628.763966486,
+        "borrowed": 544730612.959903
+      },
+      "change_1h": -0.6206464026193572,
+      "change_1d": -0.8760503622742135,
+      "change_7d": -7.366831394129406,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "compound-finance"
+    },
+    {
+      "id": "212",
+      "name": "Venus Core Pool",
+      "address": "bsc:0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63",
+      "symbol": "XVS",
+      "url": "https://app.venus.io/#/core-pool",
+      "description": "A Decentralized Marketplace for Lenders and Borrowers with Borderless Stablecoins.",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/venus-core-pool",
+      "audits": "2",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Binance",
+        "Ethereum",
+        "Arbitrum",
+        "zkSync Era",
+        "Base",
+        "Unichain",
+        "Optimism",
+        "Op_Bnb"
+      ],
+      "module": "venus.js",
+      "twitter": "VenusProtocol",
+      "audit_links": [
+        "https://www.certik.org/projects/swipe"
+      ],
+      "forkedFromIds": [
+        "114"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "RedStone",
+          "type": "Aggregator",
+          "proof": [
+            "https://docs-v4.venus.io/risk/resilient-price-oracle#bnb-chain",
+            "https://docs-v4.venus.io/risk/resilient-price-oracle",
+            "https://docs-v4.venus.io/risk/resilient-price-oracle#unichain-mainnet:~:text=%2D-,Unichain%20Mainnet,-Pool"
+          ]
+        },
+        {
+          "name": "Chainlink",
+          "type": "Aggregator",
+          "proof": [
+            "https://docs-v4.venus.io/risk/resilient-price-oracle"
+          ]
+        }
+      ],
+      "parentProtocol": "parent#venus-finance",
+      "dimensions": {
+        "fees": "venus-finance"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/registries/compound.js",
+      "slug": "venus-core-pool",
+      "tvl": 986861178.3365346,
+      "chainTvls": {
+        "Base": 33230.945789093574,
+        "Base-borrowed": 6021.109969619846,
+        "zkSync Era": 510296.9863244218,
+        "Arbitrum-borrowed": 412600.9882863772,
+        "Unichain": 19103.31976996597,
+        "Optimism-borrowed": 715.227100947326,
+        "Optimism": 3436.6717812736974,
+        "zkSync Era-borrowed": 546274.8423249088,
+        "Op_Bnb-borrowed": 663.3801806963515,
+        "Unichain-borrowed": 5131.867493347046,
+        "Op_Bnb": 549.000576710616,
+        "Arbitrum": 1134269.0525561199,
+        "Binance-borrowed": 371306546.2656581,
+        "Binance": 982895005.939576,
+        "Ethereum-borrowed": 971952.9781889385,
+        "Ethereum": 2265286.4201610396,
+        "borrowed": 373249906.65920293
+      },
+      "change_1h": 0.6000125802094942,
+      "change_1d": 0.10337011357925974,
+      "change_7d": -7.15946925239416,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "venus"
+    },
+    {
+      "id": "6600",
+      "name": "Jupiter Lend",
+      "address": "solana:JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "symbol": "JUP",
+      "url": "https://jup.ag/?ref=f6y1ryr2snn3",
+      "description": "Jupiter Lend is Jupiter's DeFi platform for lending and borrowing crypto",
+      "chain": "Solana",
+      "logo": "https://icons.llamao.fi/icons/protocols/jupiter-lend",
+      "audits": "0",
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Solana"
+      ],
+      "oraclesBreakdown": [
+        {
+          "name": "Pyth",
+          "type": "Primary",
+          "proof": [
+            "https://dev.jup.ag/docs/lend-api/oracle#hop-based-oracle-system"
+          ]
+        }
+      ],
+      "module": "jupiter-lend/index.js",
+      "twitter": "JupiterExchange",
+      "parentProtocol": "parent#jupiter",
+      "tokensExcludedFromParent": {
+        "Solana": [
+          "JUPSOL",
+          "JLP",
+          "JupUSD"
+        ]
+      },
+      "listedAt": 1755585345,
+      "dimensions": {
+        "fees": "jupiter-lend"
+      },
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/jupiter-lend/index.js",
+      "slug": "jupiter-lend",
+      "tvl": 890287646.497628,
+      "chainTvls": {
+        "Solana-borrowed": 836450620.6816746,
+        "Solana": 890287646.497628,
+        "borrowed": 836450620.6816746
+      },
+      "change_1h": -12.210532183623712,
+      "change_1d": 0.8184858364380858,
+      "change_7d": -1.7559441145164811,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "jupiter"
+    },
+    {
+      "id": "6056",
+      "name": "Lista Lending",
+      "address": "bsc:0xFceB31A79F71AC9CBDCF853519c1b12D379EdC46",
+      "symbol": "LISTA",
+      "url": "https://lista.org/lending",
+      "description": "Lista Lending is a decentralized P2P lending protocol on BNB Chain that uses a vault-based system to pool liquidity and allocate it across lending markets based on supply and demand.",
+      "chain": "Multi-Chain",
+      "logo": "https://icons.llamao.fi/icons/protocols/lista-lending",
+      "audits": "2",
+      "audit_links": [
+        "https://github.com/lista-dao/moolah/tree/master/docs/audits"
+      ],
+      "gecko_id": null,
+      "cmcId": null,
+      "category": "Lending",
+      "chains": [
+        "Binance",
+        "Ethereum"
+      ],
+      "module": "lista-lending/index.js",
+      "twitter": "LISTA_DAO",
+      "parentProtocol": "parent#lista-dao",
+      "oraclesBreakdown": [
+        {
+          "name": "Atlas",
+          "type": "Primary",
+          "proof": [
+            "https://docs.bsc.lista.org/for-developer/multi-oracle"
+          ],
+          "startDate": "2026-06-02"
+        },
+        {
+          "name": "RedStone",
+          "type": "Primary",
+          "proof": [
+            "https://docs.bsc.lista.org/for-developer/multi-oracle"
+          ]
+        },
+        {
+          "name": "Chainlink",
+          "type": "Secondary",
+          "proof": [
+            "https://docs.bsc.lista.org/for-developer/multi-oracle"
+          ]
+        },
+        {
+          "name": "Binance Oracle",
+          "type": "Secondary",
+          "proof": [
+            "https://docs.bsc.lista.org/for-developer/multi-oracle"
+          ]
+        }
+      ],
+      "tokensExcludedFromParent": {
+        "BSC": [
+          "SLISBNB"
+        ]
+      },
+      "listedAt": 1744828415,
+      "dimensions": {
+        "fees": "lista-lending"
+      },
+      "methodology": "TVL counts the tokens locked in the protocol's vaults. Smart Lending swap pool liquidity is tracked separately in lista-dex.",
+      "misrepresentedTokens": false,
+      "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/lista-lending/index.js",
+      "slug": "lista-lending",
+      "tvl": 607807237.2394731,
+      "chainTvls": {
+        "Ethereum-borrowed": 631356.8632998228,
+        "Ethereum": 931401.6535667849,
+        "Binance": 606875835.5859063,
+        "Binance-borrowed": 117272689.76984544,
+        "borrowed": 117904046.63314526
+      },
+      "change_1h": 0.009075466609530736,
+      "change_1d": -2.451384746564429,
+      "change_7d": -6.049967508922478,
+      "tokenBreakdowns": {},
+      "mcap": null,
+      "parentProtocolSlug": "lista-dao"
+    }
+  ],
+  "top_chains": [
+    {
+      "gecko_id": "ethereum",
+      "tvl": 37268804922.292305,
+      "tokenSymbol": "ETH",
+      "cmcId": "1027",
+      "name": "Ethereum",
+      "chainId": 1
+    },
+    {
+      "gecko_id": "solana",
+      "tvl": 4853149603.457424,
+      "tokenSymbol": "SOL",
+      "cmcId": "5426",
+      "name": "Solana",
+      "chainId": null
+    },
+    {
+      "gecko_id": "binancecoin",
+      "tvl": 4836953677.096659,
+      "tokenSymbol": "BNB",
+      "cmcId": "1839",
+      "name": "BSC",
+      "chainId": 56
+    },
+    {
+      "gecko_id": "tron",
+      "tvl": 4424978157.901328,
+      "tokenSymbol": "TRON",
+      "cmcId": "1958",
+      "name": "Tron",
+      "chainId": null
+    },
+    {
+      "gecko_id": null,
+      "tvl": 4070026896.432859,
+      "tokenSymbol": null,
+      "cmcId": null,
+      "name": "Base",
+      "chainId": 8453
+    },
+    {
+      "gecko_id": "bitcoin",
+      "tvl": 3892298491.519505,
+      "tokenSymbol": "BTC",
+      "cmcId": "1",
+      "name": "Bitcoin",
+      "chainId": null
+    },
+    {
+      "gecko_id": "hyperliquid",
+      "tvl": 1402640747.5690346,
+      "tokenSymbol": "HYPE",
+      "cmcId": "32196",
+      "name": "Hyperliquid L1",
+      "chainId": null
+    },
+    {
+      "gecko_id": "hash-2",
+      "tvl": 1349604141.29445,
+      "tokenSymbol": "HASH",
+      "cmcId": "19960",
+      "name": "Provenance",
+      "chainId": null
+    },
+    {
+      "gecko_id": "arbitrum",
+      "tvl": 1198578073.024519,
+      "tokenSymbol": "ARB",
+      "cmcId": "11841",
+      "name": "Arbitrum",
+      "chainId": 42161
+    },
+    {
+      "gecko_id": "polygon-ecosystem-token",
+      "tvl": 994834584.3963104,
+      "tokenSymbol": "POL",
+      "cmcId": "28321",
+      "name": "Polygon",
+      "chainId": 137
+    }
+  ],
+  "aave_top_pools": [
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "DAI",
+      "tvlUsd": 636514,
+      "apyBase": 27.71424,
+      "apyReward": null,
+      "apy": 27.71424,
+      "rewardTokens": null,
+      "pool": "3665ee7e-6c5d-49d9-abb7-c47ab5d9d4ac",
+      "apyPct1D": 24.4947,
+      "apyPct7D": 22.74031,
+      "apyPct30D": 25.69014,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 96,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 4.47225,
+      "sigma": 0.17397,
+      "count": 1236,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 3.4442,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Avalanche",
+      "project": "aave-v3",
+      "symbol": "GHO",
+      "tvlUsd": 77422,
+      "apyBase": 21.2796,
+      "apyReward": null,
+      "apy": 21.2796,
+      "rewardTokens": null,
+      "pool": "ad892d6d-c5a4-433e-8de0-bb77f19a4cf3",
+      "apyPct1D": 16.79601,
+      "apyPct7D": 14.48377,
+      "apyPct30D": 15.19863,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 92,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 6.54195,
+      "sigma": 0.16503,
+      "count": 67,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.82381,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "USDTB",
+      "tvlUsd": 6938271,
+      "apyBase": 16.5004,
+      "apyReward": 0.41285,
+      "apy": 16.91324,
+      "rewardTokens": [
+        "0x04EADd7B10ea9a484c60860aea7A7C0AEc09B9F0"
+      ],
+      "pool": "baee0253-eb6e-4a08-a579-a2acd4f034b2",
+      "apyPct1D": 13.69235,
+      "apyPct7D": 10.11073,
+      "apyPct30D": 11.9383,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 92,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 2.12376,
+      "sigma": 0.09756,
+      "count": 389,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xC139190F447e929f090Edeb554D95AbB8b18aC1C"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.18029,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Mantle",
+      "project": "aave-v3",
+      "symbol": "GHO",
+      "tvlUsd": 2504715,
+      "apyBase": 3.17816,
+      "apyReward": 6,
+      "apy": 9.17816,
+      "rewardTokens": [
+        "0x1a23b27aC7775B6220dC4F816b5c6A629E371f19"
+      ],
+      "pool": "125974d5-ad17-4a3a-b967-ebbf721fca22",
+      "apyPct1D": 0.02944,
+      "apyPct7D": 2.46057,
+      "apyPct30D": 2.2354,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 57.99999999999999,
+        "binnedConfidence": 1
+      },
+      "poolMeta": null,
+      "mu": 6.14723,
+      "sigma": 0.08964,
+      "count": 67,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 7.17089,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Avalanche",
+      "project": "aave-v3",
+      "symbol": "AUSD",
+      "tvlUsd": 17464,
+      "apyBase": 8.95518,
+      "apyReward": null,
+      "apy": 8.95518,
+      "rewardTokens": null,
+      "pool": "8a1218c0-b408-4784-852c-8305396ba8f4",
+      "apyPct1D": 0.04368,
+      "apyPct7D": 4.40836,
+      "apyPct30D": 6.07696,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 91,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 4.16565,
+      "sigma": 0.16389,
+      "count": 476,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 5.26989,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Base",
+      "project": "aave-v3",
+      "symbol": "GHO",
+      "tvlUsd": 142165,
+      "apyBase": 8.68034,
+      "apyReward": null,
+      "apy": 8.68034,
+      "rewardTokens": null,
+      "pool": "35dbaee7-dc76-465c-b468-a09634833f7f",
+      "apyPct1D": -35.50309,
+      "apyPct7D": 5.15114,
+      "apyPct30D": 3.48104,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 72,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 4.86491,
+      "sigma": 0.1512,
+      "count": 67,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 4.86377,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Mantle",
+      "project": "aave-v3",
+      "symbol": "USDC",
+      "tvlUsd": 1234511,
+      "apyBase": 3.18935,
+      "apyReward": 5.20197,
+      "apy": 8.39133,
+      "rewardTokens": [
+        "0x09E4C43B7Ce78AC58fF6A920f1fD5D84a7975f78"
+      ],
+      "pool": "32cb38a5-b9b9-441a-bf07-8fab47b999d3",
+      "apyPct1D": 0.06025,
+      "apyPct7D": 2.73602,
+      "apyPct30D": 1.30271,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 77,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 5.70435,
+      "sigma": 0.12203,
+      "count": 89,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.39805,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "USDC",
+      "tvlUsd": 60584753,
+      "apyBase": 3.17235,
+      "apyReward": 3.79,
+      "apy": 6.96235,
+      "rewardTokens": [
+        "0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c"
+      ],
+      "pool": "6f00d46b-8735-49ae-9ced-2a0fccc56ad0",
+      "apyPct1D": 0.02085,
+      "apyPct7D": 0.0792,
+      "apyPct30D": -0.4382,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 62,
+        "binnedConfidence": 2
+      },
+      "poolMeta": "Umbrella",
+      "mu": 7.35203,
+      "sigma": 0.04234,
+      "count": 44,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xD4fa2D31b7968E448877f69A96DE69f5de8cD23E"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 7.2178,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Plasma",
+      "project": "aave-v3",
+      "symbol": "GHO",
+      "tvlUsd": 6908757,
+      "apyBase": 2.21237,
+      "apyReward": 4.51648,
+      "apy": 6.72885,
+      "rewardTokens": [
+        "0x53Bf7B3DCf81d6AF354147698Fce45b847649E2a",
+        "0x6100E367285b01F48D07953803A2d8dCA5D19873"
+      ],
+      "pool": "f0df03c4-a46f-4f41-be89-37226c814918",
+      "apyPct1D": 1.14141,
+      "apyPct7D": 0.76698,
+      "apyPct30D": -0.13171,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 67,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 5.47272,
+      "sigma": 0.10844,
+      "count": 67,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.14381,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Mantle",
+      "project": "aave-v3",
+      "symbol": "USDT0",
+      "tvlUsd": 39155498,
+      "apyBase": 2.87845,
+      "apyReward": 3.7695,
+      "apy": 6.64796,
+      "rewardTokens": [
+        "0x09E4C43B7Ce78AC58fF6A920f1fD5D84a7975f78"
+      ],
+      "pool": "47da0cdd-7b1d-4927-9545-20b53b73afa8",
+      "apyPct1D": -0.07173,
+      "apyPct7D": 2.19773,
+      "apyPct30D": 1.23178,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 65,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 4.64299,
+      "sigma": 0.10303,
+      "count": 89,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x779Ded0c9e1022225f8E0630b35a9b54bE713736"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 5.06835,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "GHO",
+      "tvlUsd": 14548882,
+      "apyBase": null,
+      "apyReward": 6.59,
+      "apy": 6.59,
+      "rewardTokens": [
+        "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f"
+      ],
+      "pool": "bf0660ab-38bf-48a4-9a6c-393ec0e2ff5f",
+      "apyPct1D": 0.01,
+      "apyPct7D": 0.11,
+      "apyPct30D": 0.25,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 65,
+        "binnedConfidence": 2
+      },
+      "poolMeta": "Umbrella",
+      "mu": 6.33406,
+      "sigma": 0.05196,
+      "count": 44,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.20099,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "USDT",
+      "tvlUsd": 78990323,
+      "apyBase": 2.22692,
+      "apyReward": 4.3,
+      "apy": 6.52692,
+      "rewardTokens": [
+        "0x23878914EFE38d27C4D67Ab83ed1b93A74D4086a"
+      ],
+      "pool": "a90d554a-b548-4f50-b03e-9dcb724b7777",
+      "apyPct1D": 0.07254,
+      "apyPct7D": 0.31826,
+      "apyPct30D": 0.04377,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 63,
+        "binnedConfidence": 2
+      },
+      "poolMeta": "Umbrella",
+      "mu": 6.55403,
+      "sigma": 0.03328,
+      "count": 44,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x7Bc3485026Ac48b6cf9BaF0A377477Fff5703Af8"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 6.38042,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "RLUSD",
+      "tvlUsd": 79257803,
+      "apyBase": 1.72112,
+      "apyReward": 3.48232,
+      "apy": 5.20344,
+      "rewardTokens": [
+        "0xE3190143Eb552456F88464662f0c0C4aC67A77eB"
+      ],
+      "pool": "98d07333-f5e4-4a48-8061-cfb4b73ccf79",
+      "apyPct1D": -0.02805,
+      "apyPct7D": 0.02608,
+      "apyPct30D": 0.88446,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 72,
+        "binnedConfidence": 2
+      },
+      "poolMeta": "Aave Horizon Market",
+      "mu": 2.81815,
+      "sigma": 0.09526,
+      "count": 151,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 5.06622,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "aave-v3",
+      "symbol": "WETH",
+      "tvlUsd": 12272320,
+      "apyBase": 1.43278,
+      "apyReward": 3.65,
+      "apy": 5.08278,
+      "rewardTokens": [
+        "0x4d5F47FA6A74757f35C14fD3a6Ef8E3C9BC514E8"
+      ],
+      "pool": "82969010-fb6e-4af6-a72c-55c8da9c78cf",
+      "apyPct1D": -0.07857,
+      "apyPct7D": -0.03695,
+      "apyPct30D": -0.07449,
+      "stablecoin": false,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 59,
+        "binnedConfidence": 1
+      },
+      "poolMeta": "Umbrella",
+      "mu": 5.09257,
+      "sigma": 0.02912,
+      "count": 44,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x0bfc9d54Fc184518A81162F8fB99c2eACa081202"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 5.01469,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Linea",
+      "project": "aave-v3",
+      "symbol": "USDT",
+      "tvlUsd": 47208,
+      "apyBase": 4.93555,
+      "apyReward": null,
+      "apy": 4.93555,
+      "rewardTokens": null,
+      "pool": "6817bab0-5389-40a0-84d1-78830c1d81aa",
+      "apyPct1D": 0.13881,
+      "apyPct7D": -0.20338,
+      "apyPct30D": 1.88606,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 69,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 3.12772,
+      "sigma": 0.09473,
+      "count": 474,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xA219439258ca9da29E9Cc4cE5596924745e12B93"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 4.59235,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    }
+  ],
+  "compound_top_pools": [
+    {
+      "chain": "Scroll",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 17655,
+      "apyBase": 4.79885,
+      "apyReward": 0,
+      "apy": 4.79885,
+      "rewardTokens": [
+        "0x643e160a3C3E2B7eae198f0beB1BfD2441450e86"
+      ],
+      "pool": "9b255e6c-a36c-4bac-a93a-be70b6be90f5",
+      "apyPct1D": 0.00062,
+      "apyPct7D": 0.00167,
+      "apyPct30D": 0.02284,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 71,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 3.85875,
+      "sigma": 0.12129,
+      "count": 435,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 4.81702,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 39046464,
+      "apyBase": 3.16911,
+      "apyReward": 0.0971,
+      "apy": 3.2662,
+      "rewardTokens": [
+        "0xc00e94Cb662C3520282E6f5717214004A7f26888"
+      ],
+      "pool": "7da72d09-56ca-4ec5-a45f-59114353e487",
+      "apyPct1D": -0.00614,
+      "apyPct7D": -0.00991,
+      "apyPct30D": -0.05749,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 56.00000000000001,
+        "binnedConfidence": 1
+      },
+      "poolMeta": null,
+      "mu": 4.92439,
+      "sigma": 0.14962,
+      "count": 1355,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 3.2091,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Base",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 847636,
+      "apyBase": 3.23924,
+      "apyReward": 0,
+      "apy": 3.23924,
+      "rewardTokens": [
+        "0x9e1028F5F1D5eDE59748FFceE5532509976840E0"
+      ],
+      "pool": "0c8567f8-ba5b-41ad-80de-00a71895eb19",
+      "apyPct1D": -1.158,
+      "apyPct7D": -1.67162,
+      "apyPct30D": -0.65472,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 73,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 5.96292,
+      "sigma": 0.14312,
+      "count": 822,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 4.25122,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Polygon",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 288006,
+      "apyBase": 3.1181,
+      "apyReward": 0,
+      "apy": 3.1181,
+      "rewardTokens": [
+        "0x8505b9d2254A7Ae468c0E9dd10Ccea3A837aef5c"
+      ],
+      "pool": "a17d8b32-48cb-4446-aad7-ed4278f144e0",
+      "apyPct1D": 0.00014,
+      "apyPct7D": -0.87726,
+      "apyPct30D": 0.36026,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 81,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 6.52937,
+      "sigma": 0.21532,
+      "count": 1137,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 8.0018,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "OP Mainnet",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 321757,
+      "apyBase": 3.01607,
+      "apyReward": 0,
+      "apy": 3.01607,
+      "rewardTokens": [
+        "0x7e7d4467112689329f7E06571eD0E8CbAd4910eE"
+      ],
+      "pool": "b828f0cb-853d-4b32-aebb-2e20d7fd70a8",
+      "apyPct1D": 0.00765,
+      "apyPct7D": 0.03219,
+      "apyPct30D": -0.10399,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Down",
+        "predictedProbability": 56.00000000000001,
+        "binnedConfidence": 1
+      },
+      "poolMeta": null,
+      "mu": 5.32179,
+      "sigma": 0.13643,
+      "count": 721,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 3.00241,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Ethereum",
+      "project": "compound-v3",
+      "symbol": "USDT",
+      "tvlUsd": 47251672,
+      "apyBase": 2.71466,
+      "apyReward": 0.08992,
+      "apy": 2.80458,
+      "rewardTokens": [
+        "0xc00e94Cb662C3520282E6f5717214004A7f26888"
+      ],
+      "pool": "f4d5b566-e815-4ca2-bb07-7bcd8bc797f1",
+      "apyPct1D": -0.01671,
+      "apyPct7D": -0.05247,
+      "apyPct30D": 0.03904,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 82,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 4.86054,
+      "sigma": 0.15846,
+      "count": 632,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 2.76984,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Arbitrum",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "tvlUsd": 4571638,
+      "apyBase": 2.56615,
+      "apyReward": 0,
+      "apy": 2.56615,
+      "rewardTokens": [
+        "0x354A6dA3fcde098F8389cad84b0182725c6C91dE"
+      ],
+      "pool": "d9c395b9-00d0-4426-a6b3-572a6dd68e54",
+      "apyPct1D": 6e-05,
+      "apyPct7D": -0.07256,
+      "apyPct30D": -0.1083,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 84,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 5.89245,
+      "sigma": 0.15442,
+      "count": 997,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 2.65325,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "OP Mainnet",
+      "project": "compound-v3",
+      "symbol": "USDT",
+      "tvlUsd": 983953,
+      "apyBase": 2.51327,
+      "apyReward": 0,
+      "apy": 2.51327,
+      "rewardTokens": [
+        "0x7e7d4467112689329f7E06571eD0E8CbAd4910eE"
+      ],
+      "pool": "8d208be9-5455-48f9-89ba-1113f3f875ea",
+      "apyPct1D": 8e-05,
+      "apyPct7D": -0.08528,
+      "apyPct30D": -0.35084,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 93,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 5.38467,
+      "sigma": 0.14796,
+      "count": 721,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 2.67522,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Base",
+      "project": "compound-v3",
+      "symbol": "WETH",
+      "tvlUsd": 121286,
+      "apyBase": 2.11315,
+      "apyReward": 0,
+      "apy": 2.11315,
+      "rewardTokens": [
+        "0x9e1028F5F1D5eDE59748FFceE5532509976840E0"
+      ],
+      "pool": "7993b97d-12c3-4a36-b6b6-5b37bac4f8ae",
+      "apyPct1D": 0.77867,
+      "apyPct7D": 0.76718,
+      "apyPct30D": 0.75144,
+      "stablecoin": false,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 64,
+        "binnedConfidence": 2
+      },
+      "poolMeta": null,
+      "mu": 3.16035,
+      "sigma": 0.07282,
+      "count": 997,
+      "outlier": false,
+      "underlyingTokens": [
+        "0x4200000000000000000000000000000000000006"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 1.51623,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    },
+    {
+      "chain": "Arbitrum",
+      "project": "compound-v3",
+      "symbol": "USDT",
+      "tvlUsd": 9540986,
+      "apyBase": 1.8573,
+      "apyReward": 0,
+      "apy": 1.8573,
+      "rewardTokens": [
+        "0x354A6dA3fcde098F8389cad84b0182725c6C91dE"
+      ],
+      "pool": "85247b13-8180-44e7-b38c-4d324cc68a92",
+      "apyPct1D": 0.0005,
+      "apyPct7D": -0.00524,
+      "apyPct30D": -0.20626,
+      "stablecoin": true,
+      "ilRisk": "no",
+      "exposure": "single",
+      "predictions": {
+        "predictedClass": "Stable/Up",
+        "predictedProbability": 85,
+        "binnedConfidence": 3
+      },
+      "poolMeta": null,
+      "mu": 4.08965,
+      "sigma": 0.12488,
+      "count": 721,
+      "outlier": false,
+      "underlyingTokens": [
+        "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+      ],
+      "il7d": null,
+      "apyBase7d": null,
+      "apyMean30d": 1.90655,
+      "volumeUsd1d": null,
+      "volumeUsd7d": null,
+      "apyBaseInception": null
+    }
+  ],
+  "token_prices": {
+    "aave": {
+      "usd": 90.85,
+      "usd_market_cap": 1379048881.984143,
+      "usd_24h_change": 2.385313696787335
+    },
+    "bitcoin": {
+      "usd": 59597,
+      "usd_market_cap": 1194914220585.6006,
+      "usd_24h_change": -0.09713018139956278
+    },
+    "dai": {
+      "usd": 0.999823,
+      "usd_market_cap": 4636913560.2713,
+      "usd_24h_change": 0.03230855505292252
+    },
+    "ethereum": {
+      "usd": 1574.9,
+      "usd_market_cap": 190064572941.67252,
+      "usd_24h_change": 0.11876743707186557
+    },
+    "tether": {
+      "usd": 0.9984,
+      "usd_market_cap": 186040001809.70047,
+      "usd_24h_change": -0.020479986749186642
+    },
+    "usd-coin": {
+      "usd": 0.999817,
+      "usd_market_cap": 73628267407.58983,
+      "usd_24h_change": 0.0156668588678996
+    },
+    "wrapped-steth": {
+      "usd": 1950.09,
+      "usd_market_cap": 7229658582.497702,
+      "usd_24h_change": -0.4085837724767941
+    }
+  }
+}

@@ -1,0 +1,73 @@
+# 角色 KPI 定义 - 每周追踪
+# 由运营/复盘流程读取，对照 employees.yaml 中各角色的 kpi.target 进行达成度评估。
+# 多指标角色（programmer/tester/product_manager）按多行展开，每行一个 metric。
+kpis:
+  - role: ceo
+    metric: wallet_balance_weekly_growth
+    description: 公司钱包余额周增长率
+    target: 5.0
+    unit: "%"
+    tracking_source: wallet_balance
+
+  - role: cto
+    metric: tech_debt_resolution_rate
+    description: 技术债解决率（已关闭技术债 / 总技术债）
+    target: 80.0
+    unit: "%"
+    tracking_source: task_queue
+
+  - role: coo
+    metric: weekly_tips_total
+    description: 周累计打赏收入（含 PayPal / 加密货币到账）
+    target: 10.0
+    unit: "$"
+    tracking_source: ledger
+
+  - role: architect
+    metric: weekly_design_docs
+    description: 周产出的设计文档数（模块拆分 / 接口定义 / 技术规范）
+    target: 2.0
+    unit: "份"
+    tracking_source: projects
+
+  - role: programmer
+    metric: weekly_delivery_count
+    description: 周交付任务数（含编码、缺陷修复、技术文章）
+    target: 5.0
+    unit: "项"
+    tracking_source: task_queue
+
+  - role: programmer
+    metric: first_pass_rate
+    description: 首次测试通过率（一次通过的任务 / 总交付任务）
+    target: 80.0
+    unit: "%"
+    tracking_source: testing
+
+  - role: tester
+    metric: weekly_test_count
+    description: 周执行的测试用例数
+    target: 5.0
+    unit: "项"
+    tracking_source: testing
+
+  - role: tester
+    metric: defect_miss_rate
+    description: 缺陷漏测率（线上发现的遗漏缺陷 / 总缺陷）
+    target: 10.0
+    unit: "%"
+    tracking_source: incidents
+
+  - role: product_manager
+    metric: weekly_topics
+    description: 周产出的选题/PRD 数
+    target: 5.0
+    unit: "项"
+    tracking_source: projects
+
+  - role: product_manager
+    metric: adoption_rate
+    description: 选题采纳率（被立项的选题 / 总产出选题）
+    target: 50.0
+    unit: "%"
+    tracking_source: decisions_log

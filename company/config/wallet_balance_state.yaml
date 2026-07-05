@@ -1,0 +1,4 @@
+last_balance: 0.0
+chain: ethereum
+address: '${ETH_TIPPING_ADDRESS}'
+updated_at: '2026-06-28T13:54:59'

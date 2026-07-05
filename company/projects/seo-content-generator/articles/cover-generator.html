@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cover Generator · Cyberpunk Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #05060a;
+    color: #e8f4ff;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(0, 240, 255, 0.08), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(255, 0, 200, 0.06), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .app {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 32px 80px;
+  }
+  .meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: #4a8db8;
+    text-transform: uppercase;
+  }
+  .meta-bar .dot {
+    width: 8px; height: 8px;
+    background: #00f0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #00f0ff;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+  h1.title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  h1.title .accent {
+    background: linear-gradient(90deg, #00f0ff 0%, #ff2bd6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  p.subtitle {
+    font-size: 16px;
+    color: #6a8caa;
+    max-width: 720px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+  .canvas-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+      0 0 0 1px rgba(0, 240, 255, 0.15),
+      0 0 60px rgba(0, 240, 255, 0.08),
+      0 40px 100px rgba(0, 0, 0, 0.6);
+  }
+  .canvas-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, transparent 0%, transparent 49%, rgba(0, 240, 255, 0.04) 50%, transparent 51%, transparent 100%);
+    background-size: 4px 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .corner-marks {
+    position: absolute;
+    inset: 16px;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .corner-marks span {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: #00f0ff;
+    border-style: solid;
+    border-width: 0;
+  }
+  .corner-marks .tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+  .corner-marks .tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+  .corner-marks .bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+  .corner-marks .br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+  .controls {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  .btn {
+    position: relative;
+    background: linear-gradient(135deg, #00f0ff 0%, #0078ff 100%);
+    color: #001020;
+    border: none;
+    padding: 16px 36px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: #00f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    clip-path: none;
+  }
+  .btn-ghost:hover {
+    background: rgba(0, 240, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  }
+  .spec-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+  }
+  .spec-item {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .spec-item .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #4a8db8;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .spec-item .value {
+    font-size: 14px;
+    color: #e8f4ff;
+  }
+</style>
+</head>
+<body>
+  <div class="app">
+    <div class="meta-bar">
+      <span class="dot"></span>
+      <span>SYSTEM · COVER.GEN.v2</span>
+      <span>·</span>
+      <span>1920 × 1080</span>
+      <span>·</span>
+      <span>CYBERPUNK EDITION</span>
+    </div>
+
+    <h1 class="title">Cover <span class="accent">Generator</span></h1>
+    <p class="subtitle">
+      全新赛博朋克风格封面 — 立体以太坊钻石、全息粒子场、电路网格、霓虹辉光、扫描线效果。
+      点击下载后上传至 Mirror.xyz 作为文章封面。
+    </p>
+
+    <div class="canvas-frame">
+      <canvas id="cover" width="1920" height="1080"></canvas>
+      <div class="corner-marks">
+        <span class="tl"></span>
+        <span class="tr"></span>
+        <span class="bl"></span>
+        <span class="br"></span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="downloadImage()">⬡ Download PNG</button>
+      <button class="btn-ghost" onclick="regenerate()">↻ Regenerate</button>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="label">Resolution</div>
+        <div class="value">1920 × 1080 · PNG</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Palette</div>
+        <div class="value">#05060a / #00f0ff / #ff2bd6</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Typeface</div>
+        <div class="value">Orbitron · JetBrains Mono</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">Engine</div>
+        <div class="value">HTML5 Canvas · 100% local</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const canvas = document.getElementById('cover');
+const ctx = canvas.getContext('2d');
+const W = canvas.width;
+const H = canvas.height;
+
+// ============ Random seed for regeneration ============
+let seed = Math.random() * 1000;
+function rand() {
+  // simple deterministic-ish PRNG for particles
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed / 233280;
+}
+
+function drawCover() {
+  // -------- 1. Deep space gradient background --------
+  const bgGrad = ctx.createRadialGradient(W*0.5, H*0.45, 0, W*0.5, H*0.45, W*0.9);
+  bgGrad.addColorStop(0, '#0a1428');
+  bgGrad.addColorStop(0.4, '#050a1a');
+  bgGrad.addColorStop(1, '#000308');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // -------- 2. Perspective grid floor (Tron-style) --------
+  drawPerspectiveGrid();
+
+  // -------- 3. Circuit traces on left and right --------
+  drawCircuitTraces();
+
+  // -------- 4. Holographic particle field --------
+  drawParticles();
+
+  // -------- 5. Central Ethereum diamond (3D-ish) --------
+  drawEthereumDiamond(W*0.5, H*0.42, 160);
+
+  // -------- 6. Orbital rings around logo --------
+  drawOrbitalRings(W*0.5, H*0.42);
+
+  // -------- 7. Glowing data streams --------
+  drawDataStreams();
+
+  // -------- 8. Scanline overlay --------
+  drawScanlines();
+
+  // -------- 9. Vignette --------
+  drawVignette();
+
+  // -------- 10. Noise texture for film grain --------
+  drawNoise();
+
+  // -------- 11. Typography (titles, badges, footer) --------
+  drawTypography();
+}
+
+function drawPerspectiveGrid() {
+  ctx.save();
+  const horizonY = H * 0.62;
+  const vanishingX = W * 0.5;
+
+  // Horizontal lines (receding)
+  for (let i = 0; i < 22; i++) {
+    const t = i / 22;
+    const y = horizonY + Math.pow(t, 2.2) * (H - horizonY);
+    const alpha = 0.04 + (1 - t) * 0.18;
+    ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(W, y);
+    ctx.stroke();
+  }
+
+  // Vertical lines (converging to vanishing point)
+  const numLines = 28;
+  for (let i = -numLines; i <= numLines; i++) {
+    const xBottom = vanishingX + (i / numLines) * W * 1.2;
+    ctx.strokeStyle = `rgba(0, 240, 255, 0.12)`;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(vanishingX, horizonY);
+    ctx.lineTo(xBottom, H);
+    ctx.stroke();
+  }
+
+  // Glow at horizon
+  const horizonGlow = ctx.createLinearGradient(0, horizonY - 80, 0, horizonY + 20);
+  horizonGlow.addColorStop(0, 'rgba(255, 43, 214, 0)');
+  horizonGlow.addColorStop(0.7, 'rgba(255, 43, 214, 0.15)');
+  horizonGlow.addColorStop(1, 'rgba(0, 240, 255, 0.35)');
+  ctx.fillStyle = horizonGlow;
+  ctx.fillRect(0, horizonY - 80, W, 100);
+  ctx.restore();
+}
+
+function drawCircuitTraces() {
+  ctx.save();
+  ctx.strokeStyle = 'rgba(0, 240, 255, 0.35)';
+  ctx.lineWidth = 1.5;
+  ctx.lineCap = 'square';
+
+  // Left-side circuit
+  const leftPaths = [
+    [[80, 180], [320, 180], [320, 280], [180, 280], [180, 380]],
+    [[60, 450], [240, 450], [240, 600], [120, 600], [120, 720]],
+    [[100, 800], [280, 800], [280, 880], [200, 880], [200, 980]]
+  ];
+  leftPaths.forEach(path => drawCircuitPath(path));
+
+  // Right-side circuit
+  const rightPaths = [
+    [[W-80, 180], [W-320, 180], [W-320, 280], [W-180, 280], [W-180, 380]],
+    [[W-60, 450], [W-240, 450], [W-240, 600], [W-120, 600], [W-120, 720]],
+    [[W-100, 800], [W-280, 800], [W-280, 880], [W-200, 880], [W-200, 980]]
+  ];
+  rightPaths.forEach(path => drawCircuitPath(path));
+
+  // Circuit nodes (small glowing squares)
+  const nodes = [
+    [320, 180], [180, 380], [240, 600], [120, 720], [280, 880],
+    [W-320, 180], [W-180, 380], [W-240, 600], [W-120, 720], [W-280, 880]
+  ];
+  nodes.forEach(([x, y]) => {
+    ctx.fillStyle = '#00f0ff';
+    ctx.shadowColor = '#00f0ff';
+    ctx.shadowBlur = 12;
+    ctx.fillRect(x - 3, y - 3, 6, 6);
+    ctx.shadowBlur = 0;
+  });
+  ctx.restore();
+}
+
+function drawCircuitPath(path) {
+  ctx.beginPath();
+  ctx.moveTo(path[0][0], path[0][1]);
+  for (let i = 1; i < path.length; i++) {
+    ctx.lineTo(path[i][0], path[i][1]);
+  }
+  ctx.stroke();
+}
+
+function drawParticles() {
+  ctx.save();
+  // Reset seed for deterministic placement
+  seed = 42;
+  for (let i = 0; i < 120; i++) {
+    const x = rand() * W;
+    const y = rand() * H;
+    const size = rand() * 2 + 0.5;
+    const alpha = rand() * 0.6 + 0.2;
+    const isMagenta = rand() > 0.7;
+    const color = isMagenta ? `rgba(255, 43, 214, ${alpha})` : `rgba(0, 240, 255, ${alpha})`;
+    ctx.fillStyle = color;
+    ctx.shadowColor = color;
+    ctx.shadowBlur = size * 4;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.shadowBlur = 0;
+  ctx.restore();
+}
+
+function drawEthereumDiamond(cx, cy, size) {
+  ctx.save();
+  ctx.translate(cx, cy);
+
+  // Outer glow halo (multiple layers)
+  for (let i = 5; i > 0; i--) {
+    const r = size * (1 + i * 0.4);
+    const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, r);
+    grad.addColorStop(0, `rgba(0, 240, 255, ${0.15 / i})`);
+    grad.addColorStop(0.5, `rgba(255, 43, 214, ${0.08 / i})`);
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(0, 0, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // Top half (bright)
+  ctx.beginPath();
+  ctx.moveTo(0, -size);
+  ctx.lineTo(size * 0.65, -size * 0.1);
+  ctx.lineTo(0, 0);
+  ctx.closePath();
+  const topGrad = ctx.createLinearGradient(0, -size, 0, 0);
+  topGrad.addColorStop(0, '#ffffff');
+  topGrad.addColorStop(0.5, '#7fe8ff');
+  topGrad.addColorStop(1, '#00d4ff');
+  ctx.fillStyle = topGrad;
+  ctx.shadowColor = '#00f0ff';
+  ctx.shadowBlur = 30;
+  ctx.fill();
+
+  // Bottom-right half (darker)
+  ctx.beginPath();
+  ctx.moveTo(0, size);
+  ctx.lineTo(size * 0.65, -size * 0.1);
+  ctx.lineTo(0, 0);
+  ctx.closePath();
+  const botRightGrad = ctx.createLinearGradient(0, 0, 0, size);
+  botRightGrad.addColorStop(0, '#0099cc');
+  botRightGrad.addColorStop(1, '#003355');
+  ctx.fillStyle = botRightGrad;
+  ctx.fill();
+
+  // Top-left half
+  ctx.beginPath();
+  ctx.moveTo(0, -size);
+  ctx.lineTo(-size * 0.65, -size * 0.1);
+  ctx.lineTo(0, 0);
+  ctx.closePath();
+  const topLeftGrad = ctx.createLinearGradient(0, -size, 0, 0);
+  topLeftGrad.addColorStop(0, '#d0f4ff');
+  topLeftGrad.addColorStop(1, '#4090ff');
+  ctx.fillStyle = topLeftGrad;
+  ctx.fill();
+
+  // Bottom-left half
+  ctx.beginPath();
+  ctx.moveTo(0, size);
+  ctx.lineTo(-size * 0.65, -size * 0.1);
+  ctx.lineTo(0, 0);
+  ctx.closePath();
+  const botLeftGrad = ctx.createLinearGradient(0, 0, 0, size);
+  botLeftGrad.addColorStop(0, '#1a4a8a');
+  botLeftGrad.addColorStop(1, '#0a1530');
+  ctx.fillStyle = botLeftGrad;
+  ctx.fill();
+
+  // Edge highlights
+  ctx.shadowBlur = 0;
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(0, -size);
+  ctx.lineTo(0, size);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(-size * 0.65, -size * 0.1);
+  ctx.lineTo(size * 0.65, -size * 0.1);
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function drawOrbitalRings(cx, cy) {
+  ctx.save();
+  ctx.translate(cx, cy);
+
+  // Three elliptical orbits at different angles
+  const orbits = [
+    { rx: 260, ry: 90, rot: -0.3, color: 'rgba(0, 240, 255, 0.4)', dash: [] },
+    { rx: 290, ry: 110, rot: 0.2, color: 'rgba(255, 43, 214, 0.35)', dash: [4, 8] },
+    { rx: 320, ry: 130, rot: -0.6, color: 'rgba(0, 240, 255, 0.2)', dash: [2, 12] }
+  ];
+
+  orbits.forEach(o => {
+    ctx.save();
+    ctx.rotate(o.rot);
+    ctx.strokeStyle = o.color;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash(o.dash);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, o.rx, o.ry, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  });
+
+  // Orbiting node points
+  ctx.setLineDash([]);
+  const nodeAngles = [0.5, 2.1, 3.8, 5.2];
+  nodeAngles.forEach((a, i) => {
+    const o = orbits[i % orbits.length];
+    const x = Math.cos(a) * o.rx * Math.cos(o.rot) - Math.sin(a) * o.ry * Math.sin(o.rot);
+    const y = Math.cos(a) * o.rx * Math.sin(o.rot) + Math.sin(a) * o.ry * Math.cos(o.rot);
+    ctx.fillStyle = i % 2 === 0 ? '#00f0ff' : '#ff2bd6';
+    ctx.shadowColor = i % 2 === 0 ? '#00f0ff' : '#ff2bd6';
+    ctx.shadowBlur = 15;
+    ctx.beginPath();
+    ctx.arc(x, y, 5, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  ctx.shadowBlur = 0;
+  ctx.restore();
+}
+
+function drawDataStreams() {
+  ctx.save();
+  seed = 99;
+  for (let i = 0; i < 8; i++) {
+    const x = rand() * W;
+    const y1 = rand() * H * 0.4;
+    const y2 = y1 + 80 + rand() * 200;
+    const grad = ctx.createLinearGradient(x, y1, x, y2);
+    grad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+    grad.addColorStop(0.5, 'rgba(0, 240, 255, 0.6)');
+    grad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, y1);
+    ctx.lineTo(x, y2);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawScanlines() {
+  ctx.save();
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+  for (let y = 0; y < H; y += 3) {
+    ctx.fillRect(0, y, W, 1);
+  }
+  ctx.restore();
+}
+
+function drawVignette() {
+  ctx.save();
+  const grad = ctx.createRadialGradient(W/2, H/2, W*0.3, W/2, H/2, W*0.75);
+  grad.addColorStop(0, 'rgba(0, 0, 0, 0)');
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0.6)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+  ctx.restore();
+}
+
+function drawNoise() {
+  ctx.save();
+  const imageData = ctx.getImageData(0, 0, W, H);
+  const data = imageData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const noise = (Math.random() - 0.5) * 18;
+    data[i] = Math.max(0, Math.min(255, data[i] + noise));
+    data[i + 1] = Math.max(0, Math.min(255, data[i + 1] + noise));
+    data[i + 2] = Math.max(0, Math.min(255, data[i + 2] + noise));
+  }
+  ctx.putImageData(imageData, 0, 0);
+  ctx.restore();
+}
+
+function drawTypography() {
+  // Top-left brand
+  ctx.save();
+  ctx.font = '600 14px "JetBrains Mono", monospace';
+  ctx.fillStyle = 'rgba(0, 240, 255, 0.9)';
+  ctx.textAlign = 'left';
+  ctx.fillText('AUTOCORP // INSIGHTS', 60, 80);
+
+  ctx.font = '300 11px "JetBrains Mono", monospace';
+  ctx.fillStyle = 'rgba(0, 240, 255, 0.4)';
+  ctx.fillText('DOC.ID ${ETH_PREFIX}·789C', 60, 100);
+
+  // Top-right system status
+  ctx.textAlign = 'right';
+  ctx.font = '400 12px "JetBrains Mono", monospace';
+  ctx.fillStyle = 'rgba(255, 43, 214, 0.7)';
+  ctx.fillText('● BLOCK #18,432,901', W - 60, 80);
+  ctx.fillStyle = 'rgba(232, 244, 255, 0.5)';
+  ctx.font = '300 10px "JetBrains Mono", monospace';
+  ctx.fillText('NETWORK · MAINNET · SYNCED', W - 60, 100);
+
+  // Main title — bottom hero
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'alphabetic';
+
+  // Subtle glow behind title
+  const titleGlow = ctx.createRadialGradient(W*0.5, H*0.78, 0, W*0.5, H*0.78, 600);
+  titleGlow.addColorStop(0, 'rgba(0, 240, 255, 0.15)');
+  titleGlow.addColorStop(1, 'rgba(0, 240, 255, 0)');
+  ctx.fillStyle = titleGlow;
+  ctx.fillRect(0, H*0.65, W, H*0.35);
+
+  // Title shadow for depth
+  ctx.shadowColor = 'rgba(0, 240, 255, 0.9)';
+  ctx.shadowBlur = 25;
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '900 96px "Orbitron", sans-serif';
+  ctx.letterSpacing = '4px';
+  ctx.fillText('ETHEREUM WALLET', W * 0.5, H * 0.78);
+  ctx.shadowBlur = 0;
+
+  // Subtitle with gradient text effect (manual)
+  ctx.font = '300 28px "Space Grotesk", sans-serif';
+  ctx.fillStyle = 'rgba(0, 240, 255, 0.9)';
+  ctx.fillText('THE ULTIMATE GUIDE TO SECURITY & SETUP', W * 0.5, H * 0.85);
+
+  // Bottom decorative line with year badge
+  const lineY = H * 0.91;
+  ctx.strokeStyle = 'rgba(0, 240, 255, 0.4)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(W * 0.5 - 200, lineY);
+  ctx.lineTo(W * 0.5 - 60, lineY);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(W * 0.5 + 60, lineY);
+  ctx.lineTo(W * 0.5 + 200, lineY);
+  ctx.stroke();
+
+  ctx.fillStyle = '#ff2bd6';
+  ctx.shadowColor = '#ff2bd6';
+  ctx.shadowBlur = 15;
+  ctx.font = '700 22px "Orbitron", sans-serif';
+  ctx.fillText('2026 EDITION', W * 0.5, lineY + 8);
+  ctx.shadowBlur = 0;
+
+  // Bottom-left footer
+  ctx.textAlign = 'left';
+  ctx.font = '300 11px "JetBrains Mono", monospace';
+  ctx.fillStyle = 'rgba(232, 244, 255, 0.35)';
+  ctx.fillText('TIP · ${ETH_TIPPING_ADDRESS}', 60, H - 40);
+
+  // Bottom-right version
+  ctx.textAlign = 'right';
+  ctx.fillStyle = 'rgba(232, 244, 255, 0.35)';
+  ctx.fillText('v2.0 · CRYPTO EDU · CC-BY', W - 60, H - 40);
+
+  ctx.restore();
+}
+
+function downloadImage() {
+  const link = document.createElement('a');
+  link.download = 'ethereum-wallet-cover-cyberpunk-2026.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+function regenerate() {
+  drawCover();
+}
+
+// Initial render
+drawCover();
+</script>
+</body>
+</html>

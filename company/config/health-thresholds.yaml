@@ -1,0 +1,62 @@
+# 健康监控阈值配置 (Health Thresholds)
+#
+# 定义 5 类健康指标的 yellow / red 阈值，由 engine/health_monitor.py 加载。
+# 配置文件缺失或读取异常时，HealthMonitor 会优雅降级为内置默认值。
+#
+# 状态判定规则（HealthMonitor._determine_status）：
+# - mode="higher_is_worse"（值越高越糟，如失败率、pending 数）：
+#     value >= red_threshold   => red
+#     value >= yellow_threshold => yellow
+#     否则                       => green
+# - mode="lower_is_worse"（值越低越糟，如余额、达成率）：
+#     value <= red_threshold    => red
+#     value <= yellow_threshold => yellow
+#     否则                       => green
+#
+# 阈值可调，下列为默认推荐值。
+
+# 1. 任务健康
+task_health:
+  pending_count_yellow: 10
+  pending_count_red: 30
+  avg_complete_minutes_yellow: 60
+  avg_complete_minutes_red: 180
+  fail_rate_percent_yellow: 20
+  fail_rate_percent_red: 50
+  retry_rate_percent_yellow: 30
+  retry_rate_percent_red: 60
+
+# 2. 角色健康
+# output_files_daily 特殊语义：当日 0 产出为黄，连续 2 天 0 产出为红
+role_health:
+  inactive_days_yellow: 1
+  inactive_days_red: 3
+  output_files_daily_yellow: 0
+  output_files_daily_red: 0
+  kpi_achievement_percent_yellow: 50
+  kpi_achievement_percent_red: 20
+
+# 3. 财务健康
+finance_health:
+  wallet_balance_usd_yellow: 10
+  wallet_balance_usd_red: 1
+  zero_income_days_yellow: 2
+  zero_income_days_red: 3
+
+# 4. 协作健康
+collab_health:
+  message_pool_daily_yellow: 5
+  message_pool_daily_red: 1
+  handoff_count_daily_yellow: 5
+  handoff_count_daily_red: 10
+  phase_completion_rate_percent_yellow: 60
+  phase_completion_rate_percent_red: 30
+
+# 5. 服务健康
+service_health:
+  pending_orders_yellow: 3
+  pending_orders_red: 8
+  avg_delivery_days_yellow: 3
+  avg_delivery_days_red: 7
+  first_acceptance_rate_percent_yellow: 60
+  first_acceptance_rate_percent_red: 30

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "dec-wallet-2026-06-28",
+    "type": "crisis",
+    "priority": "P0",
+    "action": "推进至少 1 个即时收入渠道（BitDegree Missions / 文章打赏 / Learn&Earn）",
+    "owner": "company_self"
+  },
+  {
+    "id": "dec-publish-2026-06-28",
+    "type": "publish",
+    "priority": "P1",
+    "action": "发布文章：The Ultimate Guide to Aave Protocol in 2026: How t",
+    "target": "paragraph",
+    "local_path": "company/projects/seo-content-generator/articles/03-aave-protocol-v2.md",
+    "owner": "user_assist"
+  },
+  {
+    "id": "dec-produce-2026-06-28",
+    "type": "produce",
+    "priority": "P1",
+    "action": "重写 1 篇 SEO 文章（按 upcoming 顺序）",
+    "owner": "company_self"
+  }
+]

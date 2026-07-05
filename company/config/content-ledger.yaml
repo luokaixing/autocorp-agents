@@ -1,0 +1,102 @@
+# 内容发布追踪账本
+# 记录每篇文章的发布平台、URL、发布时间、收益（打赏+广告分成）
+
+articles:
+  - id: art_001
+    title: "The Ultimate Guide to Ethereum Wallets in 2026: Security, Setup and Best Practices"
+    local_path: "company/projects/seo-content-generator/articles/04-ethereum-wallet-guide-v2.md"
+    cover_path: "company/projects/seo-content-generator/articles/cover-generator.html"
+    keyword: "ethereum wallet"
+    word_count: 2000
+    published_at: "2026-06-27"
+    status: published
+    platforms:
+      - platform: paragraph
+        url: "https://paragraph.com/@autocorp-insights/the-ultimate-guide-to-ethereum-wallets-in-2026-security-setup-and-best-practices"
+        author_handle: "@autocorp-insights"
+        published_at: "2026-06-27"
+        tips_received_eth: 0.0
+        tips_received_usd: 0.0
+        views_24h: null
+        views_7d: null
+    tipping_address: "${ETH_TIPPING_ADDRESS}"
+    twitter_post_url: ""
+    reddit_post_urls: []
+    publish0x_url: ""
+    notes: "首篇发布 - 公司内容业务第 1 个里程碑"
+
+  - id: art_002
+    title: "The Ultimate Guide to Crypto Airdrops in 2026: How to Qualify Without Losing Money"
+    local_path: "company/projects/seo-content-generator/articles/01-airdrop-guide-v2.md"
+    keyword: "airdrop crypto"
+    word_count: 2100
+    published_at: "2026-06-27"
+    status: published
+    platforms:
+      - platform: paragraph
+        url: "https://paragraph.com/@autocorp-insights/the-ultimate-guide-to-crypto-airdrops-in-2026-how-to-qualify-without-losing-money"
+        author_handle: "@autocorp-insights"
+        published_at: "2026-06-27"
+        tips_received_eth: 0.0
+        tips_received_usd: 0.0
+        views_24h: null
+        views_7d: null
+    tipping_address: "${ETH_TIPPING_ADDRESS}"
+    twitter_post_url: ""
+    reddit_post_urls: []
+    publish0x_url: ""
+    notes: "AI 自主通过 agent-browser 发布 - 公司内容业务第 2 个里程碑（浏览器自动化解锁）"
+
+  - id: art_003
+    title: "The Ultimate Guide to Aave Protocol in 2026: How to Lend, Borrow, and Earn Safely"
+    local_path: "company/projects/seo-content-generator/articles/03-aave-protocol-v2.md"
+    cover_path: "company/projects/seo-content-generator/articles/aave-promo-2026.jpg"
+    keyword: "aave protocol"
+    word_count: 2200
+    published_at: "2026-06-29"
+    status: published
+    platforms:
+      - platform: paragraph
+        url: "https://paragraph.com/@autocorp-insights/the-ultimate-guide-to-aave-protocol-in-2026-how-to-lend-borrow-and-earn-safely-2"
+        author_handle: "@autocorp-insights"
+        published_at: "2026-06-29"
+        tips_received_eth: 0.0
+        tips_received_usd: 0.0
+        views_24h: null
+        views_7d: null
+    tipping_address: "${ETH_TIPPING_ADDRESS}"
+    twitter_post_url: "https://x.com/LUOKAIXING/status/2071607658143211721"
+    reddit_post_urls: []
+    publish0x_url: ""
+    notes: "第 3 篇发布 - 含 V3 机制 + 双利率模型 + 跨链策略 + 3 大错误 + 3 个高级策略 + HTML 推广图（紫蓝渐变+幽灵 Logo+数据卡）。首条 Twitter 推文已发，养号中。"
+
+  - id: art_004
+    title: "Where to Earn the Highest DeFi Yield Right Now: A Real-Time Comparison (June 30, 2026)"
+    local_path: "company/projects/seo-content-generator/articles/04-defi-yield-comparison-2026-06-30.md"
+    keyword: "defi yield comparison"
+    word_count: 2400
+    status: ready_to_publish
+    data_sources:
+      - "DefiLlama Yields API (238 Aave pools + 119 Compound pools)"
+      - "DefiLlama Protocols API (7742 protocols, 624 lending)"
+      - "CoinGecko Price API"
+    data_snapshot_time: "2026-06-29T16:23:00Z"
+    raw_data_path: "company/knowledge/market-research/defi-yield-snapshot-2026-06-30.json"
+    notes: "第 4 篇 - 首篇基于实时数据的专业分析文章。Aave USDC on Mantle 8.39% APY 是当前最高稳定币收益。Aave mainnet USDC 6.96% vs Compound 3.27%（差 2 倍）。所有数据真实可验证。"
+
+upcoming_articles:
+  - art_004: Solana Ecosystem
+  - art_005: USDC Stablecoin
+  - art_006: DeFi Lending
+  - art_007: Crypto Staking
+  - art_008: Binance Learn & Earn
+  - art_009: Crypto Faucet
+  - art_010: NFT Airdrop
+
+metrics:
+  total_published: 3
+  total_pending: 1
+  total_drafts: 7
+  total_tips_eth: 0.0
+  total_tips_usd: 0.0
+  total_views: 0

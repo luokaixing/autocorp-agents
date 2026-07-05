@@ -1,0 +1,64 @@
+name: Monad
+slug: monad
+status: active
+expected_airdrop: $200-2000
+created_at: '2026-06-27T17:33:48'
+updated_at: '2026-06-27T17:33:49'
+tasks:
+- id: monad-01
+  title: 钱包配置
+  category: user
+  assignee: user_assist
+  status: in_progress
+  description: 配置参与空投所需钱包（MetaMask 等），连接目标测试网
+  queue_task_id: task-20260627-025
+  updated_at: '2026-06-27T17:33:49'
+- id: monad-02
+  title: 测试币领取
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 从水龙头领取测试币（零成本）
+  queue_task_id: task-20260627-026
+- id: monad-03
+  title: 测试网交互 swap
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 在测试网 DEX 完成 swap 交互
+  queue_task_id: task-20260627-027
+- id: monad-04
+  title: 测试网交互 桥
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 在测试网完成跨链桥交互
+  queue_task_id: task-20260627-028
+- id: monad-05
+  title: 测试网交互 合约
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 在测试网部署/调用合约交互
+  queue_task_id: task-20260627-029
+- id: monad-06
+  title: 社区任务 Twitter/Discord
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 完成 Twitter 关注转发、Discord 加入等社区任务
+  queue_task_id: task-20260627-030
+- id: monad-07
+  title: 快照检查
+  category: ai
+  assignee: coo
+  status: pending
+  description: AI 自主检查空投快照资格（无需用户操作）
+  queue_task_id: task-20260627-031
+- id: monad-08
+  title: 领取空投
+  category: user
+  assignee: user_assist
+  status: pending
+  description: 快照合格后领取空投（需 AI 提醒用户及时领取）
+  queue_task_id: task-20260627-032

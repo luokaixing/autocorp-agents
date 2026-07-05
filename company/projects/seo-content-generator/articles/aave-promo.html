@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aave Protocol Guide 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 675px;
+    font-family: 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    overflow: hidden;
+  }
+  .container {
+    width: 1200px;
+    height: 675px;
+    background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 35%, #4b2c7a 70%, #6b3fa0 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  /* 背景装饰：网格 */
+  .grid-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  /* 光晕 */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .glow-1 { width: 400px; height: 400px; background: #b6509e; top: -100px; right: -100px; }
+  .glow-2 { width: 350px; height: 350px; background: #2ebac6; bottom: -80px; left: -80px; }
+
+  /* 主内容 */
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+  }
+
+  /* 幽灵 Logo（SVG） */
+  .ghost-logo {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 20px rgba(182, 80, 158, 0.8));
+  }
+
+  /* 标题 */
+  .title {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #ffffff 0%, #c4b5fd 50%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+  }
+
+  /* 副标题 */
+  .subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 36px;
+    max-width: 800px;
+    line-height: 1.4;
+  }
+
+  /* 数据卡片 */
+  .stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px 28px;
+    min-width: 160px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #c4b5fd;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* 底部标签 */
+  .tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .tag-accent {
+    background: linear-gradient(90deg, #b6509e, #2ebac6);
+    border: none;
+  }
+
+  /* 右下角作者署名 */
+  .author {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    z-index: 3;
+  }
+  .author strong { color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+
+  /* 左上角角标 */
+  .badge {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 3;
+  }
+  .badge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 12px #10b981;
+  }
+  .badge-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="grid-bg"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- 左上角 LIVE 角标 -->
+  <div class="badge">
+    <div class="badge-dot"></div>
+    <div class="badge-text">2026 Edition</div>
+  </div>
+
+  <div class="content">
+    <!-- 幽灵 Logo（Aave 标志） -->
+    <svg class="ghost-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 幽灵主体 -->
+      <path d="M50 10 C30 10 20 25 20 45 L20 80 C20 85 25 88 30 85 C35 82 40 85 45 88 C50 91 55 88 60 85 C65 82 70 85 75 88 C80 91 85 88 85 83 L85 45 C85 25 70 10 50 10 Z"
+            fill="url(#ghostGradient)" opacity="0.95"/>
+      <!-- 眼睛 -->
+      <circle cx="38" cy="42" r="5" fill="#1a0b2e"/>
+      <circle cx="62" cy="42" r="5" fill="#1a0b2e"/>
+      <!-- 嘴 -->
+      <ellipse cx="50" cy="58" rx="6" ry="8" fill="#1a0b2e"/>
+      <defs>
+        <linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#c4b5fd"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <h1 class="title">Aave Protocol Guide</h1>
+    <p class="subtitle">The complete 2026 guide to lending, borrowing &amp; earning safely on the #1 DeFi protocol</p>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value">$12B</div>
+        <div class="stat-label">TVL</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4-8%</div>
+        <div class="stat-label">Stablecoin APY</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">12+</div>
+        <div class="stat-label">Chains</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">V3</div>
+        <div class="stat-label">Latest Version</div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag tag-accent">DeFi Lending</span>
+      <span class="tag">Cross-Chain</span>
+      <span class="tag">Passive Yield</span>
+      <span class="tag">Safety Guide</span>
+    </div>
+  </div>
+
+  <div class="author">by <strong>AutoCorp Insights</strong></div>
+</div>
+</body>
+</html>

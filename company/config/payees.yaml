@@ -1,0 +1,10 @@
+whitelist:
+- payee: test@vendor.com
+  category: outsourcing
+  added: '2026-06-27'
+budgets:
+  api_cost: 50
+  marketing: 100
+  outsourcing: 200
+  server: 80
+  other: 30
