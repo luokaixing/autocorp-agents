@@ -1,8 +1,0 @@
-click>=8.0
-pyyaml>=6.0
-# PDF 白皮书转 Markdown（MinerU 优先，失败可降级到 pdfplumber/PyPDF2）
-# magic-pdf[full] 依赖较重（含 torch/opencv），如安装失败请改用下方降级库
-magic-pdf[full]>=0.10
-# 降级方案（任选其一即可，pdfplumber 保留表格结构更佳）
-pdfplumber>=0.10
-# PyPDF2>=3.0  # 最基础文本提取备用

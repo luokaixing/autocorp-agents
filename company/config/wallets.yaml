@@ -1,4 +1,0 @@
-wallets:
-- chain: ethereum
-  address: '${ETH_TIPPING_ADDRESS}'
-  created_at: '2026-06-27T12:25:56'

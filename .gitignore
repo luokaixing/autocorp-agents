@@ -6,12 +6,28 @@
 !.env.example
 
 # ============ Sensitive runtime data ============
-company/orders/
-company/llm-queue/
 api_cache/
 api_usage.json
 *.pem
 *.key
+
+# ============ Internal AI company operations (not for public repo) ============
+# 整个 company/ 目录都是 AI 公司内部运营数据：会议记录、报告、营销物料、
+# 旧项目（seo-content-generator/devto-launch/upwork-launch）、PDF 产品等。
+# 对外开源仓库只展示产品级代码（api_server / autocorp_agents / autocorp_paypal_cli）。
+company/
+
+# ============ IDE working files (specs/sessions/checklists) ============
+.trae/
+
+# ============ Browser profile (contains MetaMask extension data) ============
+chrome-profile/
+PlaywrightProfile/
+playwright-profile/
+.browser-profile/
+
+# ============ Scripts containing sensitive strings (for replacement) ============
+scripts/sanitize_for_github.py
 
 # ============ Python ============
 __pycache__/
@@ -58,7 +74,7 @@ desktop.ini
 
 # ============ Logs ============
 *.log
-company/logs/
+logs/
 
 # ============ Cache ============
 .pytest_cache/
@@ -73,4 +89,3 @@ node_modules/
 
 # ============ Build artifacts ============
 *.pdf
-!company/products/**/*.pdf

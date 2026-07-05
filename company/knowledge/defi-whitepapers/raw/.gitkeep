@@ -1,9 +1,0 @@
-# 原始 PDF 存放目录
-
-将 DeFi 项目官方白皮书 PDF 放置于此目录，然后执行：
-
-```bash
-python -m engine.content_miner --batch company/knowledge/defi-whitepapers/raw/
-```
-
-转换后的 Markdown 会输出到上级目录 `company/knowledge/defi-whitepapers/`。
